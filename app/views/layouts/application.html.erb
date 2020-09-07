@@ -40,9 +40,15 @@
     <section class="section">
       <div class="container">
         <% if alert %>
-          <div class="notification is-danger"><%= alert %></div>
+          <div class="notification is-danger">
+          <button class="delete" onclick="this.parentElement.style.display='none'"></button>
+            <%= alert %>            
+          </div>
         <% elsif notice %>
-          <div class="notification is-success"><%= notice %></div>
+          <div class="notification is-success">
+          <button class="delete" onclick="this.parentElement.style.display='none'"></button>
+            <%= notice %>
+          </div>
         <% end%>
 
         <%= yield %>
