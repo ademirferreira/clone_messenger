@@ -21,6 +21,15 @@ document.addEventListener('turbolinks:load', () => {
           fileName.textContent = input.files[0].name
         }
       }
-    })    
+    })
+
   })
 
+  if (navigator.serviceWorker) {
+    navigator.serviceWorker.register('/service-worker.js', { scope: './' })
+      .then(function(reg) {
+        console.log('[Companion]', 'Service worker registered!');
+        console.log(reg);
+      });
+  }
+ 
